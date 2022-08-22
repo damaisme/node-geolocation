@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
 
 app.post('/', (req, res) => {
   console.table({
-    link: `https://maps.google.com/?q=${req.body.latitude},${req.body.longtitude}`,
+    mapsLink: `https://maps.google.com/?q=${req.body.latitude},${req.body.longtitude}`,
     browserInfo: req.body.browserInfo
   })
   res.send('success')

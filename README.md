@@ -11,3 +11,6 @@ npm install
 ```
 npm run app
 ```
+4. Seduce target to access this url at `http://ip:port`
+5. Target location and browser info will appear in the console.
+![log](img/log.png)
